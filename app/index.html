@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="studentApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Students</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-file-upload/dist/angular-file-upload.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="core/student/student.module.js"></script>
+    <script src="core/student/student.service.js"></script>
+    <script src="core/course/course.module.js"></script>
+    <script src="core/course/course.service.js"></script>
+    <script src="core/filters/bloodGroupName.filter.js"></script>
+    <script src="student-list/student-list.module.js"></script>
+    <script src="student-list/student-list.component.js"></script>
+    <script src="student-detail/student-detail.module.js"></script>
+    <script src="student-detail/student-detail.component.js"></script>
+    <script src="student-form/student-form.module.js"></script>
+    <script src="student-form/student-form.component.js"></script>
+    <script src="delete-student/delete-student.module.js"></script>
+    <script src="delete-student/delete-student.component.js"></script>
+  </head>
+  <body>
+
+    <div class="view-container">
+      <div ng-view class="view-frame"></div>
+    </div>
+
+  </body>
+</html>

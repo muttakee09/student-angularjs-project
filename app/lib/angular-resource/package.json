@@ -1,0 +1,113 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-resource@1.8.x",
+        "scope": null,
+        "escapedName": "angular-resource",
+        "name": "angular-resource",
+        "rawSpec": "1.8.x",
+        "spec": ">=1.8.0 <1.9.0",
+        "type": "range"
+      },
+      "D:\\codes\\angular-phonecat"
+    ]
+  ],
+  "_from": "angular-resource@>=1.8.0 <1.9.0",
+  "_hasShrinkwrap": false,
+  "_id": "angular-resource@1.8.2",
+  "_inCache": true,
+  "_location": "/angular-resource",
+  "_nodeVersion": "12.16.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular-resource_1.8.2_1603281887767_0.548954990714356"
+  },
+  "_npmUser": {
+    "name": "petebacondarwin",
+    "email": "pete-npm@bacondarwin.com"
+  },
+  "_npmVersion": "6.13.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-resource@1.8.x",
+    "scope": null,
+    "escapedName": "angular-resource",
+    "name": "angular-resource",
+    "rawSpec": "1.8.x",
+    "spec": ">=1.8.0 <1.9.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-resource/-/angular-resource-1.8.2.tgz",
+  "_shasum": "fc1f1adb93dfb83e295d1cfff2a48cec4296e20a",
+  "_shrinkwrap": null,
+  "_spec": "angular-resource@1.8.x",
+  "_where": "D:\\codes\\angular-phonecat",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS module for interacting with RESTful server-side data sources",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-CbTu8ypkVZMBLm+Wd+jI9xR7QEVCeUgN8WXsr9Yi9l0s/8ZQa5kEIuYX3F/75Ej8Xs1Jp9DoKjAyvACI6Q8IJA==",
+    "shasum": "fc1f1adb93dfb83e295d1cfff2a48cec4296e20a",
+    "tarball": "https://registry.npmjs.org/angular-resource/-/angular-resource-1.8.2.tgz",
+    "fileCount": 8,
+    "unpackedSize": 58134,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfkCPgCRA9TVsSAnZWagAAmjUP/1E8MBQOPsqI/xnlGhjl\noHINAh2aMeo7HXORsmNvV8/Xcilj1i6wixoPuakBqaM3ytlU8Uv+WA9vh05L\n+asN/ftAvRQ1NJ2BOJKO8+vQQNr7q3tZuojAzX13+/Bh6dWfgMlnH6uOwioZ\ne9v0SBZ92GZYyeIuUz4mqxsgk1FwzCKlMP9uy17c0X/MPMC3jdZzUwsH9J8M\nyDIg111zSd7QEYwKRjMJxSkE5MTan1mZg4JXG0plPJTCbgB9tEqD5Gs620x9\n+5im9SUNpU82TfIPiPTGYWr6G0LwHGqpSJV4UGXoI0MecwWLulrojTwE+O/s\nIUwlnyxy510LFAunJmw6pknxscO0R2gZDB2s8n/LVD+1RD7YxICUTdofGQlD\nvLmjTRvm74Qx4+zMD+34r+LYopVYb411FK7SFnhffj/QbjC6KF4kfZ4kVH9G\nJ1ehdh1P1lj9ckj693lIvAo3QMI8LgIeqMzdDI4sOE3k27oLpfFIBOTE94d7\nCXZ6SHE6y/eGf4AGI5Cf6U7ro/vTqoWnbpZsLLV/i0h6ckkjwfgXbJZMtcSw\nAO8pSzVDCC1LzpzXvQ4H5uzx77WhnL4yv0Z2xfmAmYQOd10koAxL0n5LkLBI\nxl40cVPBfCzDgraaiZ06mMBNKU9H13wApC2M2on0+acMg4HwuWXvsNY2Ta8R\ngPIl\r\n=FHXp\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "gitHead": "553634b02c4399751514df4d52185e24f86d7d8d",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-resource": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "rest",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "angular",
+      "email": "devops+npm@angular.io"
+    },
+    {
+      "name": "petebacondarwin",
+      "email": "pete-npm@bacondarwin.com"
+    }
+  ],
+  "name": "angular-resource",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.8.2"
+}

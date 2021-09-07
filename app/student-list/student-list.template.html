@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <h2>List of Students</h2>
+
+    <p>
+        <a href="#!/create/">Create new</a>
+    </p>
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Image</th>
+            <th>Student Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Blood Group</th>
+            <th></th>
+        </tr>
+
+        <tr ng-repeat="item in $ctrl.students">
+            <td>
+                <img ng-if="item.Image" ng-src="https://localhost:44318/Photos/{{item.Image}}" alt="{{item.Image}}" width=20 />
+            </td>
+            <td>
+                {{item.StudentName}}
+            </td>
+            <td>
+                {{item.Age}}
+            </td>
+            <td>
+                {{item.Gender === 0 ? 'Male' : 'Female'}}
+            </td>
+            <td>
+                {{item.BloodGroup | bloodGroupName}}
+            </td>
+            <td>
+                <!-- <button class="btn btn-success mr-2">Update</button>
+                <button class="btn btn-info mr-2">Details</button>
+                <button class="btn btn-danger">Delete</button> -->
+                <a href="#!/update/{{item.Id}}">Update</a> |
+                <a href="#!/details/{{item.Id}}">Details</a> |
+                <a href="#!/delete/{{item.Id}}">Delete</a> |
+            </td>
+        </tr>
+    </table>
+</div>
