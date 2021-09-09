@@ -8,9 +8,9 @@
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-resource/angular-resource.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
-    <script src="lib/angular-file-upload/dist/angular-file-upload.js"></script>
     <script src="app.module.js"></script>
-    <script src="app.config.js"></script>
+    <script src="main.module.js"></script>
+    <script src="main.component.js"></script>
     <script src="core/core.module.js"></script>
     <script src="core/student/student.module.js"></script>
     <script src="core/student/student.service.js"></script>
@@ -29,7 +29,9 @@
   <body>
 
     <div class="view-container">
-      <div ng-view class="view-frame"></div>
+      <div ng-view class="view-frame">
+        <main></main>
+      </div>
     </div>
 
   </body>

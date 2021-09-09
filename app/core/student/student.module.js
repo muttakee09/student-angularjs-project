@@ -1,4 +1,4 @@
 'use strict';
 
 // Define the `core.phone` module
-angular.module('core.student', ['ngResource']);
+angular.module('core.student', []);

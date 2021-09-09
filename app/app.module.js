@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('studentApp', [
-  'ngRoute',
   'core',
+  'main',
   'studentList',
   'studentDetail',
   'studentForm',
