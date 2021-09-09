@@ -4,12 +4,18 @@ function mainFunction () {
   var self = this;
   self.$onInit= function() {
     self.pathFlag = 0;
+    self.selectedStudent = null;
   }
-  console.log(self.pathFlag);
-}
 
-self.changePath = function(flag) {
-  self.pathFlag = flag;
+  self.changePath = function(flag) {
+    console.log(flag);
+    self.pathFlag = flag;
+  }
+  
+  self.setSelectedStudent = function(student) {
+    self.selectedStudent = student;
+    console.log(self.selectedStudent);
+  }  
 }
 
 angular.
@@ -19,7 +25,6 @@ angular.
     controller: mainFunction,
     controllerAs: 'ctrl',
     bindings: {
-      changePath: '='
       }
     }
   )

@@ -1,20 +1,18 @@
 'use strict';
 
-function studentDetailController($routeParams, studentService) {
-  console.log($routeParams);
+function studentDetailController() {
   self = this;
-  studentService.getStudentDetail($routeParams.studentId).then(response => {
-    self.student = response.data
-  });
+  self.$onInit = function() {
+    self.student = self.parent.selectedStudent;
+  }
 }
-
-studentDetailController.$inject = [
-  'studentService'
-];
 
 angular.
   module('studentDetail').
   component('studentDetail', {
+    require: {
+      parent: '^main'
+    },
     templateUrl: 'student-detail/student-detail.template.html',
     controller: studentDetailController
   });

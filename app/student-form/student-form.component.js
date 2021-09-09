@@ -1,6 +1,6 @@
 'use strict';
 
-function studentFormController($routeParams, $window, studentService, Course) {
+function studentFormController(studentService) {
     const bloodGroupItems = [
     {
         id: 0,
@@ -50,17 +50,15 @@ function studentFormController($routeParams, $window, studentService, Course) {
         self.gender = '0';
         self.mainCourse = null;
         self.supplementaryCourse = null;
-        if (typeof $routeParams.studentId !== 'undefined') {
-            Student.get($routeParams.studentId,  (response) => {
-                console.log(response);
-                self.studentName = response.StudentName;
-                self.age = response.Age;
-                self.bloodGroup = String(response.BloodGroup);
-                self.image = response.Image;
-                self.gender = String(response.Gender);
-                self.mainCourse = response.MainCourse;
-                self.supplementaryCourse = response.SupplementaryCourse;
-              });
+        if (self.parent.selectedStudent !== null) {
+            const response = self.parent.selectedStudent;
+            self.studentName = response.StudentName;
+            self.age = response.Age;
+            self.bloodGroup = String(response.BloodGroup);
+            self.image = response.Image;
+            self.gender = String(response.Gender);
+            self.mainCourse = response.MainCourse;
+            self.supplementaryCourse = response.SupplementaryCourse;
         }
     }
     
@@ -79,19 +77,25 @@ function studentFormController($routeParams, $window, studentService, Course) {
         formdata.append("MainCourse", self.mainCourse);
         formdata.append("SupplementaryCourse", self.supplementaryCourse);
         
-        if (typeof $routeParams.studentId !== 'undefined') {
-         //    student = {...student, Id: $routeParams.studentId};
-            studentService.createStudent($routeParams, formdata, function(resp) {
-            $window.history.back();
+        if (self.parent.selectedStudent) {
+            studentService.updateStudent(self.parent.selectedStudent.Id, formdata).then((resp) => {
+                console.log('come on');
+                self.parent.changePath(0);
+                self.parent.setSelectedStudent(null);
             });
         }
         else {
-            Student.updateStudent(formdata, function(resp) {
-            $window.history.back();
+            studentService.createStudent(formdata).then((resp) => {
+                self.parent.changePath(0);
             });
         }
     }
   }
+
+studentFormController.$inject = [
+    'studentService', 
+];
+  
 
 angular.
   module('studentForm').
@@ -111,7 +115,9 @@ angular.
     };
  }]).
  component('studentForm', {
+   require: {
+        parent: '^main'
+    },
    templateUrl: 'student-form/student-form.template.html',
-   controller: ['$routeParams', '$window', 'studentService', 'Course', studentFormController
-   ]
+   controller: studentFormController
  });

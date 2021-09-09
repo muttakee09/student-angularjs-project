@@ -17,20 +17,26 @@ function studentService($http) {
     return $http({
       method: 'POST',
       url: 'https://localhost:44318/api/Student/',
-      data: data
+      data: data,
+      headers: {
+        "Content-type": undefined
+      }
     });
   }
-  this.updateStudent = function (data) {
+  this.updateStudent = function (id, data) {
     return $http({
       method: 'PUT',
-      url: 'https://localhost:44318/api/Student/:studentId',
-      data: data
+      url: `https://localhost:44318/api/Student/${id}`,
+      data: data,
+      headers: {
+        "Content-type": undefined
+      }
     });
   }
-  this.deleteStudent = function () {
+  this.deleteStudent = function (id) {
     return $http({
       method: 'DELETE',
-      url: 'https://localhost:44318/api/Student/:studentId'
+      url: `https://localhost:44318/api/Student/${id}`
     });
   }
   
