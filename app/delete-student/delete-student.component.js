@@ -3,12 +3,12 @@
 function deleteStudentController(studentService) {
   self = this;
   self.$onInit = function() {
-    self.student = self.parent.selectedStudent;
+    self.student = self.selectedStudent;
   };
 
   self.deleteStudent = function() {
-    studentService.deleteStudent(self.parent.selectedStudent.Id).then(resp => {
-      self.parent.changepath(0);
+    studentService.deleteStudent(self.selectedStudent.Id).then(resp => {
+      self.changepath({flag: 0});
     })
   }
 }
@@ -20,9 +20,11 @@ deleteStudentController.$inject = [
 angular.
   module('deleteStudent').
   component('deleteStudent', {
-    require: {
-      parent: '^main'
-    },
     templateUrl: 'delete-student/delete-student.template.html',
-    controller: deleteStudentController
+    controller: deleteStudentController,
+    bindings: {
+      changePath: '&',
+      setSelectedStudent: '&',
+      selectedStudent: '<'
+    }
   });

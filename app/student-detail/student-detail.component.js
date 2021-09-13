@@ -3,16 +3,23 @@
 function studentDetailController() {
   self = this;
   self.$onInit = function() {
-    self.student = self.parent.selectedStudent;
+    self.student = self.selectedStudent;
+  }
+
+  self.returnToList = function() {
+    self.setSelectedStudent({student: null});
+    self.changePath({flag: 0});
   }
 }
 
 angular.
   module('studentDetail').
   component('studentDetail', {
-    require: {
-      parent: '^main'
-    },
     templateUrl: 'student-detail/student-detail.template.html',
-    controller: studentDetailController
+    controller: studentDetailController,
+    bindings: {
+      changePath: '&',
+      setSelectedStudent: '&',
+      selectedStudent: '<'
+    }
   });

@@ -50,8 +50,8 @@ function studentFormController(studentService) {
         self.gender = '0';
         self.mainCourse = null;
         self.supplementaryCourse = null;
-        if (self.parent.selectedStudent !== null) {
-            const response = self.parent.selectedStudent;
+        if (self.selectedStudent !== null) {
+            const response = self.selectedStudent;
             self.studentName = response.StudentName;
             self.age = response.Age;
             self.bloodGroup = String(response.BloodGroup);
@@ -77,16 +77,16 @@ function studentFormController(studentService) {
         formdata.append("MainCourse", self.mainCourse);
         formdata.append("SupplementaryCourse", self.supplementaryCourse);
         
-        if (self.parent.selectedStudent) {
-            studentService.updateStudent(self.parent.selectedStudent.Id, formdata).then((resp) => {
+        if (self.selectedStudent) {
+            studentService.updateStudent(self.selectedStudent.Id, formdata).then((resp) => {
                 console.log('come on');
-                self.parent.changePath(0);
-                self.parent.setSelectedStudent(null);
+                self.changePath({flag: 0});
+                self.setSelectedStudent({student: null});
             });
         }
         else {
             studentService.createStudent(formdata).then((resp) => {
-                self.parent.changePath(0);
+                self.changePath({flag:0});
             });
         }
     }
@@ -115,9 +115,11 @@ angular.
     };
  }]).
  component('studentForm', {
-   require: {
-        parent: '^main'
-    },
    templateUrl: 'student-form/student-form.template.html',
-   controller: studentFormController
+   controller: studentFormController,
+   bindings: {
+    changePath: '&',
+    setSelectedStudent: '&',
+    selectedStudent: '<'
+  }
  });

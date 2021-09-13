@@ -12,19 +12,19 @@ function studentListController(studentService) {
   }
 
   self.toDetailPage = function(student) {
-    self.parent.setSelectedStudent(student);
-    self.parent.changePath(1);
+    self.setSelectedStudent({student: student});
+    self.changePath({flag: 1});
     console.log('dhur');
   }
 
   self.toDeletePage = function(student) {
-    self.parent.setSelectedStudent(student);
-    self.parent.changePath(3);
+    self.setSelectedStudent({student: student});
+    self.changePath({flag: 3});
   }
 
   self.toUpdatePage = function(student) {
-    self.parent.setSelectedStudent(student);
-    self.parent.changePath(2);
+    self.setSelectedStudent({student: student});
+    self.changePath({flag: 2});
   }
 }
 
@@ -35,11 +35,10 @@ studentListController.$inject = [
 angular.
   module('studentList').
   component('studentList', {
-    require: {
-      parent: '^main'
-    },
     templateUrl: 'student-list/student-list.template.html',
     controller: studentListController,
     bindings: {
-    }
+      changePath: '&',
+      setSelectedStudent: '&'
+  },
   });

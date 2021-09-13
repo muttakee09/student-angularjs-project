@@ -1,6 +1,28 @@
 <div>
-    <student-detail ng-if="ctrl.pathFlag == 1"></student-detail>
-    <student-form ng-if="ctrl.pathFlag == 2"></student-form>
-    <delete-student ng-if="ctrl.pathFlag == 3"></delete-student>
-    <student-list ng-if="ctrl.pathFlag == 0"></student-list>
+    <student-detail 
+        ng-if="ctrl.pathFlag == 1"
+        change-path="ctrl.changePath(flag)"
+        selected-student="ctrl.selectedStudent"
+        set-selected-student="ctrl.setSelectedStudent(student)">
+    </student-detail>
+    
+    <student-form 
+        ng-if="ctrl.pathFlag == 2"
+        change-path="ctrl.changePath(flag)"
+        selected-student="ctrl.selectedStudent"
+        set-selected-student="ctrl.setSelectedStudent(student)">
+    </student-form>
+    
+    <delete-student 
+        ng-if="ctrl.pathFlag == 3"
+        change-path="ctrl.changePath(flag)"
+        selected-student="ctrl.selectedStudent"
+        set-selected-student="ctrl.setSelectedStudent(student)">
+    </delete-student>
+    
+    <student-list 
+        ng-if="ctrl.pathFlag == 0" 
+        change-path="ctrl.changePath(flag)"
+        set-selected-student="ctrl.setSelectedStudent(student)">
+    </student-list>
 </div>

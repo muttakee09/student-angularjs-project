@@ -23,8 +23,6 @@ angular.
   component('main', {
     templateUrl: 'main.template.html',
     controller: mainFunction,
-    controllerAs: 'ctrl',
-    bindings: {
-      }
+    controllerAs: 'ctrl'
     }
   )
